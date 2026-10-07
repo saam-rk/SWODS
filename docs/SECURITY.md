@@ -28,6 +28,10 @@ No audit entries are suppressed and CI retains its full `npm audit --audit-level
 
 Audit results are time-dependent. Run both `npm audit` and `npm audit --omit=dev` after any dependency change and before publishing/deploying; current observed results are in `PUBLICATION_REVIEW.md`. Zero known audit entries does not establish absence of exploitable vulnerabilities.
 
+## Browser-engine capability boundary
+
+Playwright global setup records an independent WebKit offline-reload probe using a minimal cached service worker with no SWODS code. Only two repeats of the exact internal engine error, after successful online reload, cache and controller checks, exempt the actual WebKit **offline reload** case. All online service-worker/cache privacy assertions still run in WebKit; Chromium and Firefox offline checks remain required. Unknown errors or incomplete evidence fail setup rather than becoming exemptions. Classification has unit regressions and the evidence is uploaded with CI browser artifacts. This acknowledges an automation limitation, not successful Safari/offline acceptance; physical-device verification remains mandatory.
+
 ## Secrets and issue reports
 
 The public source checker rejects common credential formats, real-looking JWTs, unexpected binaries, unapproved public assets and private workspace paths. Its only JWT exceptions are exact dummy-signature fixtures in CI and the operations test. This is a heuristic source check, not a comprehensive secret scanner or Git-history audit.

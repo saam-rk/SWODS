@@ -56,7 +56,11 @@ test("join validation, capture, gallery and leave-device", async ({ page }) => {
   await page.locator('input[type="file"]').last().setInputFiles({ name: "audit.png", mimeType: "image/png", buffer: Buffer.from(png, "base64") });
   await page.locator(".capture-caption textarea").fill("A shared autumn detail");
   await page.locator(".privacy-notice button").click();
-  await page.getByRole("button", { name: "Add photo" }).click();
+  await expect(page.locator(".privacy-notice")).toBeHidden();
+  await expect(page.locator(".privacy-note")).toBeVisible();
+  const addPhoto = page.getByRole("button", { name: "Add photo", exact: true });
+  await expect(addPhoto).toBeEnabled();
+  await addPhoto.click();
   await expect(page.locator(".capture-panel--saved")).toBeVisible();
   await page.goto("/gallery");
   await expect(page.locator(".photo-tile")).not.toHaveCount(0);
@@ -89,14 +93,22 @@ test("administrator can change the local event and enforce its join code", async
 
 test.describe("production service worker", () => {
   test.use({ serviceWorkers: "allow" });
-  test("caches public shell but not private routes", async ({ page, context, browserName }) => {
-    test.fixme(browserName === "webkit" && process.platform === "win32", "Windows WebKit service worker offline support is unreliable.");
+  test("caches public shell but not private routes", async ({ page }) => {
     await page.goto("/");
     await page.evaluate(async () => { await navigator.serviceWorker.ready; });
     await page.reload();
     await expect.poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true);
     const requests = await page.evaluate(async () => (await Promise.all((await caches.keys()).map(async (name) => (await (await caches.open(name)).keys()).map((request) => request.url)))).flat());
+    expect(requests.some((url) => new URL(url).pathname === "/")).toBe(true);
     expect(requests.some((url) => /\/(?:storage|auth|rest)\/v1\//.test(url) || url.includes("/admin"))).toBe(false);
+  });
+
+  test("reloads the public shell offline when the engine supports it", async ({ page, context, browserName }) => {
+    test.skip(browserName === "webkit" && process.env.SWODS_WEBKIT_OFFLINE_CAPABILITY === "engine-unsupported", "Two independent minimal-worker probes reproduced WebKit's internal offline-reload error; see the recorded evidence. Real Safari acceptance remains required.");
+    await page.goto("/");
+    await page.evaluate(async () => { await navigator.serviceWorker.ready; });
+    await page.reload();
+    await expect.poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true);
     await context.setOffline(true);
     await page.reload();
     await expect(page.locator(".landing-page__mosaic-slot")).toBeVisible();
