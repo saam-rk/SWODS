@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-size: var(--text-body);
+  line-height: 1.55;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+[role="button"],
+a[href] {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-block-start: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-ink);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--color-action);
+  color: var(--color-on-inverse);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-action);
+  outline-offset: 3px;
+}
+
+::placeholder {
+  color: var(--color-ink-faint);
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.2rem solid transparent;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-ink-muted) 48%, transparent);
+  background-clip: padding-box;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10000;
+  top: max(var(--space-3), var(--safe-top));
+  left: max(var(--space-3), var(--safe-left));
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-control);
+  background: var(--color-ink);
+  color: var(--color-on-inverse);
+  font-weight: 700;
+  transform: translateY(-180%);
+  transition: transform var(--motion-fast) var(--ease-enter);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.design-contract {
+  display: none;
+}
+
+body:has(.entry-page),
+body:has(.onboarding-page),
+body:has(.experience-shell),
+body:has(.admin-page) {
+  background: var(--color-inverse);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+}

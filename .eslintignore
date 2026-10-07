@@ -1,0 +1,10 @@
+.next/
+node_modules/
+tmp/
+.agents/
+.claude/
+.codex/
+.cursor/
+.grok/
+.impeccable/
+video/

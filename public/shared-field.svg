@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <title>Shared field — an original geometric contact sheet</title>
+  <rect width="1600" height="1000" fill="#2b1007"/>
+  <g transform="translate(-40 -20)"><rect width="440" height="500" fill="#7a300f"/><rect x="12" y="12" width="416" height="476" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><path d="M0 370 440 90v140L0 500z" fill="#d99748"/><path d="M60 0v500M190 0v500M320 0v500" stroke="#f1dfb3" stroke-opacity=".2"/></g>
+  <g transform="translate(418 -20)"><rect width="550" height="280" fill="#ae8258"/><rect x="12" y="12" width="526" height="256" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><circle cx="330" cy="135" r="110" fill="#2b150b"/><circle cx="330" cy="135" r="76" fill="none" stroke="#f1dfb3" stroke-width="2"/></g>
+  <g transform="translate(986 -20)"><rect width="660" height="500" fill="#572007"/><rect x="12" y="12" width="636" height="476" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><path d="M0 410 190 200l170 150L660 60v440H0z" fill="#836953"/><path d="M0 445 210 285l150 150L660 180" fill="none" stroke="#d99748" stroke-width="8"/></g>
+  <g transform="translate(418 278)"><rect width="550" height="380" fill="#6d5039"/><rect x="12" y="12" width="526" height="356" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><path d="M0 190h550M0 210h550M0 240h550M0 285h550" stroke="#f1dfb3" stroke-opacity=".5"/><circle cx="275" cy="170" r="80" fill="#d99748"/></g>
+  <g transform="translate(-40 498)"><rect width="440" height="540" fill="#3f633e"/><rect x="12" y="12" width="416" height="516" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><path d="M20 540 250 0M125 540 355 0M230 540 460 0" stroke="#f1dfb3" stroke-width="38" stroke-opacity=".3"/></g>
+  <g transform="translate(418 676)"><rect width="550" height="362" fill="#7a300f"/><rect x="12" y="12" width="526" height="338" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><path d="M70 0v362M130 0v362M190 0v362M250 0v362M310 0v362M370 0v362M430 0v362" stroke="#d99748" stroke-width="18"/></g>
+  <g transform="translate(986 498)"><rect width="660" height="540" fill="#ae8258"/><rect x="12" y="12" width="636" height="516" fill="none" stroke="#fff3d6" stroke-opacity=".35"/><circle cx="345" cy="290" r="230" fill="none" stroke="#2b150b" stroke-width="35"/><circle cx="345" cy="290" r="155" fill="none" stroke="#2b150b" stroke-width="20"/><circle cx="345" cy="290" r="85" fill="#d99748"/></g>
+  <rect width="1600" height="1000" fill="#2b1007" opacity=".15"/>
+</svg>

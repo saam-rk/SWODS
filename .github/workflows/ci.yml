@@ -1,0 +1,75 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_PUBLIC_SUPABASE_URL: https://ci-placeholder.supabase.co
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: >-
+        eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYW5vbiJ9.ci-signature
+      SUPABASE_SERVICE_ROLE_KEY: >-
+        eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIn0.ci-signature
+      APP_RELEASE: ${{ github.sha }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Validate public source and media
+        run: npm run audit:publication
+
+      - name: Validate production environment contract
+        run: node scripts/validate-production-env.mjs
+
+      - name: Type-check
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test
+        run: npm test
+
+      - name: Build production application
+        run: npm run build
+
+      - name: Install browser dependencies
+        run: npx playwright install --with-deps chromium firefox webkit
+
+      - name: Browser acceptance
+        run: npm run test:e2e
+
+      - name: Dependency audit
+        run: npm audit --audit-level=moderate
+
+      - name: Keep browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-evidence
+          path: |
+            audit-artifacts/after
+            test-results
+          retention-days: 14

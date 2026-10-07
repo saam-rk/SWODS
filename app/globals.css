@@ -1,0 +1,2 @@
+/* All interface classes live in styles/*.css; only the Tailwind reset is used. */
+@import "tailwindcss/preflight.css";

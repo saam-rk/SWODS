@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "path": "public/shared-field.svg",
+      "sha256": "b1c08609585a69b57aaaa380d4c6eb92eb7c1121fc4eba7626cba6848bd07eed",
+      "origin": "Original deterministic geometry in scripts/generate-public-assets.mjs; no third-party media inputs",
+      "license": "MIT"
+    },
+    {
+      "path": "public/icon.svg",
+      "sha256": "e02386f102c1eaba79cb467f3fc20c61cd608384a4191e38be6ed047e3a18fa9",
+      "origin": "Original deterministic geometry in scripts/generate-public-assets.mjs; no third-party media inputs",
+      "license": "MIT"
+    },
+    {
+      "path": "public/favicon.svg",
+      "sha256": "e02386f102c1eaba79cb467f3fc20c61cd608384a4191e38be6ed047e3a18fa9",
+      "origin": "Original deterministic geometry in scripts/generate-public-assets.mjs; no third-party media inputs",
+      "license": "MIT"
+    },
+    {
+      "path": "public/demo-target.svg",
+      "sha256": "ad5bdf911d6e79a4c6ccfa849e6769f70238e0715a474d418b33b7d38f296a30",
+      "origin": "Original deterministic geometry in scripts/generate-public-assets.mjs; no third-party media inputs",
+      "license": "MIT"
+    },
+    {
+      "path": "public/icon-192.png",
+      "sha256": "e08a3e17b5558e73ebd3d1a61c4648583ad8592ae8225837b174d09a022e366f",
+      "origin": "Original deterministic geometry in scripts/generate-public-assets.mjs; no third-party media inputs",
+      "license": "MIT"
+    },
+    {
+      "path": "public/icon-512.png",
+      "sha256": "51960fad4f968772d81e5aebaf8258004e31e588b408d90e05cbb11a2386f09e",
+      "origin": "Original deterministic geometry in scripts/generate-public-assets.mjs; no third-party media inputs",
+      "license": "MIT"
+    }
+  ]
+}

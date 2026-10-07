@@ -1,0 +1,99 @@
+:root {
+  color-scheme: light;
+
+  --color-canvas: #f1dfb3;
+  --color-surface: #fff6df;
+  --color-surface-subtle: #ead4a6;
+  --color-ink: #2b150b;
+  --color-ink-muted: #6d5039;
+  --color-ink-faint: #836953;
+  --color-line: #d6b98b;
+  --color-line-strong: #ae8258;
+  --color-action: #7a300f;
+  --color-action-hover: #572007;
+  --color-action-soft: #f0cc94;
+  --color-success: #3f633e;
+  --color-success-soft: #e4eed9;
+  --color-warning: #82520d;
+  --color-warning-soft: #f8e8bd;
+  --color-danger: #b3262e;
+  --color-danger-soft: #fbe5e7;
+  --color-inverse: #2b1007;
+  --color-on-inverse: #fff3d6;
+
+  --app-artwork: url("/shared-field.svg");
+  --app-frame: rgb(255 238 198 / 46%);
+  --app-hairline: rgb(255 238 198 / 28%);
+  --app-header: rgb(43 16 7 / 92%);
+  --app-header-strong: rgb(43 16 7 / 95%);
+  --app-shadow-soft: rgb(43 16 7 / 12%);
+  --app-shadow-medium: rgb(43 16 7 / 14%);
+  --app-text-shadow: 0 1px 4px rgb(43 16 7 / 88%);
+  --app-paper-glass: rgb(255 246 223 / 94%);
+  --app-paper-solid: rgb(255 246 223 / 95%);
+  --app-autumn-accent: #d99748;
+
+  --font-sans: "Apfel Grotezk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-narrative: "Apfel Grotezk", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --text-metadata: 0.75rem;
+  --text-small: 0.875rem;
+  --text-body: 1rem;
+  --text-lead: clamp(1.0625rem, 1rem + 0.22vw, 1.1875rem);
+  --text-section: clamp(1.5rem, 1.15rem + 1.2vw, 2.25rem);
+  --text-page: clamp(2rem, 1.45rem + 2.2vw, 3.75rem);
+  --text-display: clamp(2.75rem, 1.9rem + 3.4vw, 4.75rem);
+  --text-entry-mobile: clamp(2.15rem, 9.2vw, 2.75rem);
+  --text-admin-title: 1.25rem;
+  --text-admin-record: 1.125rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  --radius-control: 0.25rem;
+  --radius-surface: 0.375rem;
+  --radius-panel: 0.5rem;
+  --radius-tight: 0.125rem;
+  --radius-pill: 999px;
+  --shadow-nav: 0 1px 0 rgb(43 16 7 / 12%), 0 8px 24px rgb(43 16 7 / 10%);
+  --shadow-overlay: 0 24px 64px rgb(43 16 7 / 24%);
+  --shadow-lifted: 0 12px 34px rgb(43 16 7 / 14%);
+
+  --motion-feedback: 80ms;
+  --motion-fast: 120ms;
+  --motion-ui: 180ms;
+  --motion-panel: 240ms;
+  --motion-route: 260ms;
+  --motion-story: 480ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --content-max: 78rem;
+  --reading-max: 44rem;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+
+  /* Compatibility aliases while legacy component markup is replaced. */
+  --paper: var(--color-canvas);
+  --paper-soft: var(--color-surface);
+  --ink: var(--color-ink);
+  --ink-muted: var(--color-ink-muted);
+  --line: var(--color-line);
+  --forest: var(--color-action);
+  --rust: var(--color-action);
+  --deep-shadow: var(--color-inverse);
+}
+

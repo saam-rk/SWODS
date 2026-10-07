@@ -1,0 +1,3 @@
+# Keep source and asset checksums stable across Windows/Linux clones.
+* text=auto eol=lf
+*.png binary
